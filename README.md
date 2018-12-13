@@ -1,7 +1,6 @@
-# cdsw-install
-### AZURE CDSW DEPLOYMENT
+# AZURE CDSW DEPLOYMENT
 
-# PREREQUISITES
+### PREREQUISITES
 
 Go to Azure AD > App Registration and create an app of type Web app / API. The URL is not important.
 Go to the Keys section in the App you created and create a new key. Save the secret for later
@@ -12,18 +11,20 @@ Azure Active Directory Tenant ID = Azure AD > Properties > copy the Director ID
 Azure Active Directory Client ID = Azure AD > App Registration > copy the Application ID
 Azure Active Directory Client Secret = secret key you copied
 
-
-Create Cloudera Director instance from Azure Marketplace
-Select default values for initial details like new resource group, private/public dns names, user/pwd, etc.
-Finish the wizard and wait until it is deployed.
-???Once done, go to the RG and on both NSG, open ports 7180-7189,8888
-Then check the public IP and ssh using the user/pwd you entered in the wizard.
-
-
+### STEPS TO CREATE CLOUDERA DIRECTOR 
+- Create Cloudera Director instance from Azure Marketplace
+- Select default values for initial details like new resource group, private/public dns names, user/pwd, etc.
+- Finish the wizard and wait until it is deployed.
+- Once done, go to the RG and on both NSG, open ports 7180-7189,8888
+- Then check the public IP and ssh using the user/pwd you entered in the wizard.
 
 
-Add KDC_HOST_IP to kerberos.properties
-
+
+
+
+
+### EXAMPLE PARAMETERS FOR AZURE DIRECTOR 
+```
 Subscription: Partner-Sales-Engineering
 Resource group: fabio-ghirardello-rg
 Location: East US
@@ -45,4 +46,9 @@ Azure Active Directory Client ID: 3e050xxxxxxxxxxxxxxxxxxxxx2aba7692
 Azure Active Directory Client Secret: ********************************************
 Cloudera Director Admin Username: director
 Cloudera Director Admin User Password: *************
+```
 
+### STEPS TO CREATE CDSW DEPLOYMENT
+
+
+Add KDC_HOST_IP to kerberos.properties
