@@ -1,7 +1,7 @@
 SECRET.*
 *.pem
 .azure.*
-keys/*
+azure/keys/*
 
 # env files
 .env
