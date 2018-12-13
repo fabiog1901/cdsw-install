@@ -13,6 +13,8 @@ set -o xtrace
 # Cluster post creation script
 
 echo "Creating users"
+useradd -U cdsw
+
 for i in `seq -w 30`; 
    do 
    useradd -U user$i
