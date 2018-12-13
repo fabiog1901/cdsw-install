@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# file: bootstrap-script.sh
 #
 # This script will bootstrap these OSes:
 #   - CentOS 6

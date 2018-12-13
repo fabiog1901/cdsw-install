@@ -1,4 +1,5 @@
 #!/bin/bash
+# file: kerberos-addprinc-sh
 set -o errexit
 
 if [ "$(whoami)" != "root" ]; then

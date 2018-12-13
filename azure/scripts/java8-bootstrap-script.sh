@@ -1,4 +1,5 @@
 #!/bin/bash
+# file: java8-bootstrap-script.sh
 set -o errexit
 
 if [ "$(whoami)" != "root" ]; then

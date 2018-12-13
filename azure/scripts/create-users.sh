@@ -1,4 +1,5 @@
 #!/bin/bash
+# file: create-users.sh
 set -o errexit
 
 if [ "$(whoami)" != "root" ]; then
@@ -15,7 +16,7 @@ echo "Creating users"
 for i in `seq -w 30`; 
    do 
    useradd -U user$i
-   echo Cloudera1 | passwd --stdin user$1
+   echo Cloudera1 | passwd --stdin user$i
 done
 
 groupadd supergroup
