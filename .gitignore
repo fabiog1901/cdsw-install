@@ -1,18 +1,7 @@
-.DS_Store
 SECRET.*
 *.pem
-
-#  Local .terraform directories
-**/.terraform/*
-
-# .tfstate files
-AWS/*.tfstate
-AWS/*.tfstate.*
-*.tfstate
-*.tfstate.*
-
-# IntelliJ IDEA profiles
-.idea/
+.azure.*
+keys/*
 
 # env files
 .env
