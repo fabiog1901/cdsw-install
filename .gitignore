@@ -1,0 +1,24 @@
+.DS_Store
+SECRET.*
+*.pem
+
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+AWS/*.tfstate
+AWS/*.tfstate.*
+*.tfstate
+*.tfstate.*
+
+# IntelliJ IDEA profiles
+.idea/
+
+# env files
+.env
+
+# script cookie jar file
+.cookies
+
+# VIM swap files
+*.swp
