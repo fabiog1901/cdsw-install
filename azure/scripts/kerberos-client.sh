@@ -1,4 +1,6 @@
 #!/bin/bash
+# file: kerberos-client.sh
+
 set -o errexit
 
 if [ "$(whoami)" != "root" ]; then

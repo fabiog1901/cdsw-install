@@ -1,4 +1,6 @@
 #!/bin/bash
+#cdswmaster-bootstarap-script.sh
+
 set -o errexit
 
 if [ "$(whoami)" != "root" ]; then

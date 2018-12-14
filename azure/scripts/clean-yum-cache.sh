@@ -1,4 +1,6 @@
 #!/bin/bash
+# file: clean-yum-cache.sh
+
 set -o errexit
 
 if [ "$(whoami)" != "root" ]; then

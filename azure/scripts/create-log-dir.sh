@@ -1,4 +1,5 @@
 #!/bin/bash
+# file: create-log-dir.sh
 set -o errexit
 
 user_id=${1:-$(id -u)}

@@ -1,4 +1,6 @@
 #!/bin/bash
+# file: create-hdfs-folders.sh
+
 set -o errexit
 
 exec > /var/log/cdsw-workshop/create-hdfs-folders.log 2>&1

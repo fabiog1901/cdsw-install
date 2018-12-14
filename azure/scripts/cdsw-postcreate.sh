@@ -1,4 +1,6 @@
 #!/bin/bash
+# file:cdsw-postcreate.sh
+
 set -o errexit
 
 if [ "$(whoami)" != "root" ]; then
