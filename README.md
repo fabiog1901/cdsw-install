@@ -22,7 +22,7 @@ Get these IDs:
 - Finish the wizard and wait until deployment is completed.
 - Go to the RG, and on both NSG, open ports 7180-7189,8888.
 - Check the public IP, then ssh into the vm using the user/pwd you entered in the wizard.
-
+- Set each Availability Set for Managed Disks.
 
 ### EXAMPLE PARAMETERS FOR CLOUDERA DIRECTOR WIZARD
 ```
@@ -82,7 +82,7 @@ $ TODO show example of secret.prop file
 
 Run preliminary scripts or the wrapper
 ```
-TODO
+$ run kerberos.addprinc.sh
 ```
 
 Start the bootstrap script:
@@ -108,5 +108,26 @@ If you want to SSH into a node, use the key you created previously, example:
 $ ssh -i "azure/keys/azurekey" director@10.1.0.5
 ```
 
+###
+
+For a private CDSW cluster (no public IP address) set `PublicIP: No` in the conf file for each instance template. To access CDSW, you need to add the below to file `/etc/named/zones/db.internal`:
+
+```
+cdsw                    A       10.1.0.7
+*.cdsw                  A       10.1.0.7
+
+```
+
+where 10.1.0.7 is the private IP address of the CDSW Master. Then restart the service:
+
+```
+# check syntax is correct:
+$ named-checkconf /etc/named.conf
+
+$ service named restart 
+
+```
+
+In CM, set the CDSW property `DOMAIN` to `cdsw.cloud.lab`, where `cloud.lab` is the name of the DNS service.
 
 

@@ -11,12 +11,12 @@ fi
 set -o xtrace
 
 echo "Create principals"
-kadmin.local addprinc -pw cloudera hdfs_super
-kadmin.local addprinc -pw cloudera cdsw 
+kadmin.local addprinc -pw Cloudera1 hdfs_super
+kadmin.local addprinc -pw Cloudera1 cdsw 
 
 for i in `seq -w 30`;
     do
-    kadmin.local addprinc -pw cloudera user$i
+    kadmin.local addprinc -pw Cloudera1 user$i
 done
 
 echo "All principals created"
