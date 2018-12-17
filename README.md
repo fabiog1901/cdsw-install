@@ -1,6 +1,6 @@
 # CDSW DEPLOYMENT ON AZURE VIA CLOUDERA DIRECTOR
 
-Following are instructionis to deploy a CDH+CDSW cluster on Azure using Cloudera Director's bootstrap script.
+Following are instructions to deploy a CDH+CDSW cluster on Azure using Cloudera Director's bootstrap script.
 
 For simplicity, the MIT KDC server is installed on the same instance of Cloudera Director. 
 
@@ -10,7 +10,7 @@ Make sure you check those scripts in the `scripts` folder to configure how many 
 
 ### PREREQUISITES
 
-In the *Azure Portal*, create the IAM entity with permissions to access resources in your Azure Subscription.
+In the **Azure Portal**, create the IAM entity with permissions to access resources in your Azure Subscription.
 
 - Go to `Azure AD > App Registration` and create an app of type `Web app / API`. The URL is not important.
 - Go to the app `Keys` section and create a new key. Save the secret key for later
@@ -123,7 +123,7 @@ You can also login into Cloudera Director UI via SOCKS proxy. On your home compu
 $ ssh -CND 1080 director@director-dns-name
 ```
 
-Then launch the browswer using that SOCKS proxy port, as explained [here](https://www.cloudera.com/documentation/director/latest/topics/director_get_started_azure_socks.html#concept_b4z_trl_zw)
+Then launch the browser using that SOCKS proxy port, as explained [here](https://www.cloudera.com/documentation/director/latest/topics/director_get_started_azure_socks.html#concept_b4z_trl_zw)
 
 
 You might find some useful info here too:
