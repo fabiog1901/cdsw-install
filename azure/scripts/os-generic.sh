@@ -1,5 +1,5 @@
 #!/bin/sh
-# file: bootstrap-script.sh
+# file: os-generic.sh
 #
 # This script will bootstrap these OSes:
 #   - CentOS 6
@@ -121,7 +121,7 @@ networkmanager_7()
 cat > /etc/NetworkManager/dispatcher.d/12-register-dns <<"EOF"
 #!/bin/bash
 # NetworkManager Dispatch script
-# Deployed by Cloudera Director Bootstrap
+# Deployed by Cloudera Altus Director Bootstrap
 #
 # Expected arguments:
 #    $1 - interface

@@ -1,5 +1,5 @@
 #!/bin/bash
-# file:cdsw-postcreate.sh
+# file: nip-io-trick.sh
 
 set -o errexit
 

@@ -1,12 +1,4 @@
 SECRET.*
-*.pem
-azure/keys/*
+azurekey
+.*
 
-# env files
-.env
-
-# script cookie jar file
-.cookies
-
-# VIM swap files
-*.swp
