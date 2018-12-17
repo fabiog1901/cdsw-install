@@ -1,17 +1,16 @@
 # CDSW DEPLOYMENT ON AZURE VIA CLOUDERA DIRECTOR
 
-Following are instruction to deploy a CDH+CDSW cluster on Azure using Cloudera Director's bootstrap script.
+Following are instructionis to deploy a CDH+CDSW cluster on Azure using Cloudera Director's bootstrap script.
 
-The cluster is Kerberized, and the MIT KDC server is installed on the same instance of Cloudera Director for simplicity.
-
-The CDH cluster uses the embedded database. THe cluster does not run on HA and it does not use TLS.
+For simplicity, the MIT KDC server is installed on the same instance of Cloudera Director. 
 
 Along with deploying the CDH+CDSW cluster, the bootstrap script calls some other scripts 
-that create usernames and folders in HDFS, and then add the Kerberos principals. Make sure you check the scripts folders.
+to create usernames and their folders in HDFS, and to add the Kerberos principals. 
+Make sure you check those scripts in the `scripts` folder to configure how many users you want to create, and the password to kinit.
 
 ### PREREQUISITES
 
-Create the IAM entity with permissions to access resources in your Azure Subscription.
+In the *Azure Portal*, create the IAM entity with permissions to access resources in your Azure Subscription.
 
 - Go to `Azure AD > App Registration` and create an app of type `Web app / API`. The URL is not important.
 - Go to the app `Keys` section and create a new key. Save the secret key for later
@@ -108,7 +107,7 @@ $ cloudera-director bootstrap-remote azure/azure.conf   --lp.remote.username=dir
 
 Once the script has terminated, login into Cloudera Director UI to open Cloudera Manager and navigate to the CDSW service, from which you can open the CDSW Web UI.
 
-Alternatively, go to [cdsw.<CDSW-master-public-IP>.nip.io](cdsw.<CDSW-master-public-IP>.nip.io) 
+Alternatively, go to [cdsw.\<CDSW-master-public-IP\>.nip.io](cdsw.<CDSW-master-public-IP>.nip.io) 
 
 ### MONITORING AND TROUBLESHOOTING
 
