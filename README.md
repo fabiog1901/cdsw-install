@@ -1,5 +1,14 @@
 # CDSW DEPLOYMENT ON AZURE VIA CLOUDERA DIRECTOR
 
+Following are instruction to deploy a CDH+CDSW cluster on Azure using Cloudera Director's bootstrap script.
+
+The cluster is Kerberized, and the MIT KDC server is installed on the same instance of Cloudera Director for simplicity.
+
+The CDH cluster uses the embedded database. THe cluster does not run on HA and it does not use TLS.
+
+Along with deploying the CDH+CDSW cluster, the bootstrap script calls some other scripts 
+that create usernames and folders in HDFS, and then add the Kerberos principals. Make sure you check the scripts folders.
+
 ### PREREQUISITES
 
 Create the IAM entity with permissions to access resources in your Azure Subscription.
@@ -97,32 +106,42 @@ Start the bootstrap script:
 $ cloudera-director bootstrap-remote azure/azure.conf   --lp.remote.username=director   --lp.remote.password=xxxxxxxx
 ```
 
+Once the script has terminated, login into Cloudera Director UI to open Cloudera Manager and navigate to the CDSW service, from which you can open the CDSW Web UI.
+
+Alternatively, go to [cdsw.<CDSW-master-public-IP>.nip.io](cdsw.<CDSW-master-public-IP>.nip.io) 
+
 ### MONITORING AND TROUBLESHOOTING
 
 Monitor the deployment for errors:
 
 ```
-tail -f /var/log/cloudera-director-server/application.log
+$ tail -f /var/log/cloudera-director-server/application.log
 ```
 
-You can also login into Cloudera Director UI via SOCKS proxy.
-
-
-You might find some useful info for troubleshooting here too:
+You can also login into Cloudera Director UI via SOCKS proxy. On your home computer, open a SSH tunnel:
 
 ```
-cat /root/.cloudera-director/logs/application.log
+$ ssh -CND 1080 director@director-dns-name
+```
+
+Then launch the browswer using that SOCKS proxy port, as explained [here](https://www.cloudera.com/documentation/director/latest/topics/director_get_started_azure_socks.html#concept_b4z_trl_zw)
+
+
+You might find some useful info here too:
+
+```
+$ cat /root/.cloudera-director/logs/application.log
 ```
 
 If you want to SSH into a node, use the key you created previously, example:
 
 ```
-$ ssh -i "azure/azurekey" director@10.1.0.5
+$ ssh -i "azure/azurekey" centos@10.1.0.5
 ```
 
 ### EXTRAS
 
-For a private CDSW cluster (no public IP address) set `PublicIP: No` in the conf file for each instance template. To access CDSW, you need to add the below to file `/etc/named/zones/db.internal`:
+For a private CDSW cluster (no public IP addresses) set `PublicIP: No` in the conf file for each instance template. To access CDSW, you need to add the below to file `/etc/named/zones/db.internal`:
 
 ```
 cdsw                    A       10.1.0.7
