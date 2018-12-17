@@ -28,7 +28,7 @@ function svcctl() {
 grep rdrand /proc/cpuinfo || echo 'EXTRAOPTIONS="-r /dev/urandom"' >> /etc/sysconfig/rngd
 svcctl start rngd
 
-REALM=HADOOPSECURITY.LOCAL
+REALM=HADOOP.LOCAL
 
 PRIVATE_IP=$(hostname -I)
 
