@@ -88,7 +88,7 @@ svcctl stop iptables || :
 # commands in directly.
 
 echo -e 'addprinc -pw Passw0rd! cm/admin\nexit' | kadmin.local 
-echo -e 'addprinc -pw Cloudera1 cdsw\nexit' | kadmin.local 
+# echo -e 'addprinc -pw Cloudera1 cdsw\nexit' | kadmin.local 
 
 # Ensure that selinux is turned off now and at reboot
 setenforce 0

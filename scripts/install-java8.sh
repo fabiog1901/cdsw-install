@@ -1,11 +1,11 @@
 #!/bin/bash
-# file: java8-bootstrap-script.sh
+# file: install-java8.sh
 set -o errexit
 
 if [ "$(whoami)" != "root" ]; then
   exec sudo $0
 else
-  exec > /var/log/cdsw-workshop/java8-bootstrap-script.log 2>&1
+  exec > /var/log/cdsw-workshop/install-java8.log 2>&1
 fi
 
 set -o xtrace

@@ -6,7 +6,7 @@ set -o errexit
 if [ "$(whoami)" != "root" ]; then
   exec sudo $0
 else
-  exec > /var/log/cdsw-workshop/cdsw-postcreate.log 2>&1
+  exec > /var/log/cdsw-workshop/nip-io-trick.log 2>&1
 fi
 
 set -o xtrace

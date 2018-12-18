@@ -76,15 +76,19 @@ $ ./scripts/install-mit-kdc.sh
 $ ./scripts/install-java8.sh
 $ ./scripts/kerberos-addprinc.sh
 ```
+Check the log files on ```/var/log/cdsw-workshop/``` for any errors.
 
-
-Edit the `azure.conf` file for your environment and requirements. Pay special interest to these sections:
+Edit the `azure/azure.conf` file for your environment and requirements. Pay special interest to these sections:
 
 - `provider`: update all Azure IDs with the IDs you used before when you setup Director.
 - `instances > base`: update all env details with proper RG, VNet, etc.
 - Kerberos: update the `KDC_HOST` to the Director/MIT KDC host Private IP
 - VM types, images and counts.
 - Software to be installed, versions and repository URLs
+
+The bootstrap script file scructure (HOCON) is indeed very complex and this guide is not meant to explain every bit of it; 
+unfortunately you will need to do your own homework and go through your fair share of trial and error!
+There are some reference guides available though, check the Cloudera Director client reference files in ```/usr/lib64/cloudera-director/client/```.
 
 Create a new ssh key, used by Director and CM to ssh into all cluster nodes
 
@@ -159,5 +163,6 @@ $ service named restart
 ```
 
 In CM, set the CDSW property `DOMAIN` to `cdsw.cloud.lab`, where `cloud.lab` is the name of the DNS service. Then restart CDSW service.
+
 
 
