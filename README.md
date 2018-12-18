@@ -28,7 +28,7 @@ Get these IDs:
 - Go to the Azure Marketplace and search for `Cloudera Director`, then start the wizard.
 - Complete the wizard; example values are below. 
 - Finish the wizard and wait until deployment is completed. 
-- Go to the RG, and on both NSGs, open ports 7180-7189,8888.
+- Go to the RG, and on both NSGs, open ports 80,7180-7189,8888.
 - Go to the RG, and `Convert to managed` each Availability Set.
 
 ### EXAMPLE PARAMETERS FOR CLOUDERA DIRECTOR WIZARD
