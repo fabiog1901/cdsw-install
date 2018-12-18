@@ -1,5 +1,6 @@
 #!/bin/bash
 # file: nip-io-trick.sh
+# this script sets CDSW's DOMAIN property to 'cdsw.<cdsw-master-public-ip>.nip.io'
 
 set -o errexit
 
