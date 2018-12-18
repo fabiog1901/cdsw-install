@@ -149,7 +149,6 @@ For a private CDSW cluster (no public IP addresses) set `PublicIP: No` in the co
 ```
 cdsw                    A       10.1.0.7
 *.cdsw                  A       10.1.0.7
-
 ```
 
 where 10.1.0.7 is the private IP address of the CDSW Master. Then restart the service:
@@ -159,7 +158,6 @@ where 10.1.0.7 is the private IP address of the CDSW Master. Then restart the se
 $ named-checkconf /etc/named.conf
 
 $ service named restart 
-
 ```
 
 In CM, set the CDSW property `DOMAIN` to `cdsw.cloud.lab`, where `cloud.lab` is the name of the DNS service. Then restart CDSW service.
