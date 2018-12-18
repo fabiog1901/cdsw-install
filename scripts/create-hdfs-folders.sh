@@ -17,7 +17,7 @@ hadoop fs -mkdir /user/hdfs_super
 hadoop fs -chown hdfs_super:hdfs_super /user/hdfs_super
 
 hadoop fs -mkdir /user/cdsw
-hadoop fs -chown cdswr:cdsw /user/cdsw
+hadoop fs -chown cdsw:cdsw /user/cdsw
 
 for i in `seq -w 30` ;
   do 
