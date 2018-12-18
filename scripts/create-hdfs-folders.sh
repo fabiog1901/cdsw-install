@@ -9,7 +9,7 @@ set -o xtrace
 # Cluster post creation script
 
 echo "kinit as hdfs_super"
-echo "cloudera" | kinit hdfs_super
+echo "Cloudera1" | kinit hdfs_super
 
 echo "Creating folders"
 
