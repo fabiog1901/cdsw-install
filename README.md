@@ -12,28 +12,28 @@ Make sure you check those scripts in the `scripts` folder to configure how many 
 
 In the **Azure Portal**, create the IAM entity with permissions to access resources in your Azure Subscription.
 
-- Go to `Azure AD > App Registration` and create an app of type `Web app / API`. The URL is not important.
+- Go to `Azure Active Directory > App Registration` and create an app of type `Web app / API`. The URL is not important.
 - Go to the app `Keys` section and create a new key. Save the secret key for later
 - Go to your `Subscription > IAM > Role assignment` and add `Owner` to the app you created.
 
 Get these IDs:
 
 - `Azure Subscription ID` = get it from the `Subscription` section.
-- `Azure Active Directory Tenant ID` = go to `Azure AD > Properties`, and copy the `Director ID`.
-- `Azure Active Directory Client ID` = go to `Azure AD > App Registration`, and copy the `Application ID`.
+- `Azure Active Directory Tenant ID` = go to `Azure Active Directory > Properties`, and copy the `Director ID`.
+- `Azure Active Directory Client ID` = go to `Azure Active Directory > App Registration`, and copy the `Application ID`.
 - `Azure Active Directory Client Secret` = secret key you copied.
 
 ### STEPS TO CREATE CLOUDERA DIRECTOR
 
 - Go to the Azure Marketplace and search for `Cloudera Director`, then start the wizard.
-- Select default values for initial details like new resource group, private/public dns names, user/pwd, etc.
-- Finish the wizard and wait until deployment is completed.
+- Complete the wizard; example values are below. 
+- Finish the wizard and wait until deployment is completed. 
 - Go to the RG, and on both NSG, open ports 7180-7189,8888.
 - Configure each Availability Set for Managed Disks.
 
 ### EXAMPLE PARAMETERS FOR CLOUDERA DIRECTOR WIZARD
 ```
-Subscription: Partner-Sales-Engineering
+Subscription:Partner-Sales-Engineering
 Resource group: fabio-ghirardello-rg
 Location: East US
 VM Username : director
