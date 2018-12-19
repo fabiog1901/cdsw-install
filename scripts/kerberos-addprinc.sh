@@ -14,7 +14,7 @@ echo "Create principals"
 kadmin.local addprinc -pw Cloudera1 hdfs_super
 kadmin.local addprinc -pw Cloudera1 cdsw 
 
-for i in `seq -w 30`;
+for i in `seq -w 100`;
     do
     kadmin.local addprinc -pw Cloudera1 user$i
 done
