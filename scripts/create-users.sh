@@ -15,7 +15,7 @@ set -o xtrace
 echo "Creating users"
 useradd -U cdsw
 
-for i in `seq -w 30`; 
+for i in `seq -w 100`; 
    do 
    useradd -U user$i
    echo Cloudera1 | passwd --stdin user$i
