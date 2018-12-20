@@ -30,6 +30,7 @@ Get these IDs:
 - Finish the wizard and wait until deployment is completed. 
 - Go to the RG, and on both NSGs, open ports 80,7180-7189,8888.
 - Go to the RG, and `Convert to managed` each Availability Set.
+- At the end of the wizard, you will see a summary just like the below example. Save it for later reference.
 
 ### EXAMPLE PARAMETERS FOR CLOUDERA DIRECTOR WIZARD
 ```
@@ -81,7 +82,7 @@ Check the log files on ```/var/log/cdsw-workshop/``` for any errors.
 Edit the `azure/azure.conf` file for your environment and requirements. Pay special interest to these sections:
 
 - `provider`: update all Azure IDs with the IDs you used before when you setup Director.
-- `instances > base`: update all env details with proper RG, VNet, etc.
+- `instances > base`: update all env details with proper RG, VNet, etc; you need to set `hostFqdnSuffix` to the `Private DNS domain name` you set while creating the Director instance.
 - Kerberos: update the `KDC_HOST` to the Director/MIT KDC host Private IP (get it with `$hostname -I` or check in the Azure Portal)
 - VM types, images and counts.
 - Software to be installed, versions and repository URLs
