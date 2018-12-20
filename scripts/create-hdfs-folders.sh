@@ -19,7 +19,7 @@ hadoop fs -chown hdfs_super:hdfs_super /user/hdfs_super
 hadoop fs -mkdir /user/cdsw
 hadoop fs -chown cdsw:cdsw /user/cdsw
 
-for i in `seq -w 100` ;
+for i in `seq -w 0 99` ;
   do 
   hadoop fs -mkdir /user/user$i
   hadoop fs -chown user$i:user$i /user/user$i
