@@ -82,7 +82,7 @@ Check the log files on ```/var/log/cdsw-workshop/``` for any errors.
 Edit the `azure/azure.conf` file for your environment and requirements. Pay special interest to these sections:
 
 - `provider`: update all Azure IDs with the IDs you used before when you setup Director.
-- `instances > base`: update all env details with proper RG, VNet, etc; you need to set `hostFqdnSuffix` to the `Private DNS domain name` you set while creating the Director instance. If you can't find it, you can retrieving from the `/etc/resolv.conf` file.
+- `instances > base`: update all env details with proper RG, VNet, etc; you need to set `hostFqdnSuffix` to the `Private DNS domain name` you set while creating the Director instance. If you can't find it, retrieve it:
 
 ```
 $ cat /etc/resolv.conf
