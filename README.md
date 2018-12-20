@@ -39,8 +39,8 @@ Location: East US
 VM Username : director
 VM Password: *************
 Resource name of public IP : dir_public_ip
-Public domain name prefix for Cloudera Director Server: dirdns
-Private DNS domain name: cloud.lab
+Public domain name prefix for Cloudera Director Server: director
+Private DNS domain name: mydnsdomain
 Cloudera Director Server VM size: Standard DS12 v2
 New Virtual Network: directorvnet
 Cloudera subnet: default
@@ -82,7 +82,7 @@ Edit the `azure/azure.conf` file for your environment and requirements. Pay spec
 
 - `provider`: update all Azure IDs with the IDs you used before when you setup Director.
 - `instances > base`: update all env details with proper RG, VNet, etc.
-- Kerberos: update the `KDC_HOST` to the Director/MIT KDC host Private IP
+- Kerberos: update the `KDC_HOST` to the Director/MIT KDC host Private IP (get it with `$hostname -I` or check in the Azure Portal)
 - VM types, images and counts.
 - Software to be installed, versions and repository URLs
 
@@ -160,7 +160,8 @@ $ named-checkconf /etc/named.conf
 $ service named restart 
 ```
 
-In CM, set the CDSW property `DOMAIN` to `cdsw.cloud.lab`, where `cloud.lab` is the name of the DNS service. Then restart CDSW service.
+In CM, set the CDSW property `DOMAIN` to `cdsw.mydnsdomain`, where `mydnsdomain` is the name of the DNS service. 
+Then restart the CDSW service.
 
 
 
