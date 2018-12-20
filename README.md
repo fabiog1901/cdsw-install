@@ -141,7 +141,9 @@ You can also login into Cloudera Director UI via SOCKS proxy. On your home compu
 $ ssh -CND 1080 director@director-dns-name
 ```
 
-Then launch the browser using that SOCKS proxy port, as explained [here](https://www.cloudera.com/documentation/director/latest/topics/director_get_started_azure_socks.html#concept_b4z_trl_zw). The url for Dicrector is [\<director-public-IP\>:7189](http://<director-public-IP>:7189) 
+Then launch the browser using that SOCKS proxy port, as explained [here](https://www.cloudera.com/documentation/director/latest/topics/director_get_started_azure_socks.html#concept_b4z_trl_zw). 
+
+The url for Cloudera Director is [\<director-public-IP\>:7189](http://<director-public-IP>:7189) .
 
 You might find some useful info here too:
 
