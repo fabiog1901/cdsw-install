@@ -87,9 +87,11 @@ Edit the `azure/azure.conf` file for your environment and requirements. Pay spec
 - VM types, images and counts.
 - Software to be installed, versions and repository URLs.
 
-The bootstrap script file scructure (HOCON) is indeed very complex and this guide is not meant to explain every bit of it; 
+The Director bootstrap conf file is very complex and this guide is not meant to explain every bit of it; 
 unfortunately you will need to do your own homework and go through your fair share of trial and error!
 There are some reference guides available though, check the Cloudera Director client reference files in ```/usr/lib64/cloudera-director/client/```.
+
+
 
 Create a new ssh key, used by Director and CM to ssh into all cluster nodes
 
