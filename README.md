@@ -34,7 +34,7 @@ Get these IDs:
 ### EXAMPLE PARAMETERS FOR CLOUDERA DIRECTOR WIZARD
 ```
 Subscription:Partner-Sales-Engineering
-Resource group: fabio-ghirardello-rg
+Resource group: nyc1-rg
 Location: East US
 VM Username : director
 VM Password: *************
