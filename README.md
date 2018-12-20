@@ -123,6 +123,10 @@ Once the script has terminated, login into Cloudera Director UI to open Cloudera
 
 Alternatively, go to [cdsw.\<CDSW-master-public-IP\>.nip.io](cdsw.<CDSW-master-public-IP>.nip.io) 
 
+### KERBEROS AUTH
+
+The scripts create 100 users, from `user00` to `user99`, along with their HDFS folders, all with password `Cloudera1`.
+
 ### MONITORING AND TROUBLESHOOTING
 
 Monitor the deployment for errors:
@@ -138,7 +142,7 @@ $ ssh -CND 1080 director@director-dns-name
 ```
 
 Then launch the browser using that SOCKS proxy port, as explained [here](https://www.cloudera.com/documentation/director/latest/topics/director_get_started_azure_socks.html#concept_b4z_trl_zw)
-
+The url for Dicrector is [\<director-public-IP\>:7189](<director-public-IP>:7189) 
 
 You might find some useful info here too:
 
