@@ -85,7 +85,7 @@ Edit the `azure/azure.conf` file for your environment and requirements. Pay spec
 - `instances > base`: update all env details with proper RG, VNet, etc; you need to set `hostFqdnSuffix` to the `Private DNS domain name` you set while creating the Director instance.
 - Kerberos: update the `KDC_HOST` to the Director/MIT KDC host Private IP (get it with `$hostname -I` or check in the Azure Portal)
 - VM types, images and counts.
-- Software to be installed, versions and repository URLs
+- Software to be installed, versions and repository URLs.
 
 The bootstrap script file scructure (HOCON) is indeed very complex and this guide is not meant to explain every bit of it; 
 unfortunately you will need to do your own homework and go through your fair share of trial and error!
