@@ -49,7 +49,7 @@ Cloudera subnet address prefix: 10.1.0.0/16
 MySQL DB Admin Username: director
 MySQL DB Admin Password: *************
 Cloudera Director setup information
-Azure Subscription ID :1088xxxxxxxxxxxae05be69a5f
+Azure Subscription ID : 584fd-gfgdsf884-0-40iojooig4884648f-fg
 Azure Active Directory Tenant ID: 10a0xxxxxxxxxxxxxxxxxxxxx12c924f
 Azure Active Directory Client ID: 3e050xxxxxxxxxxxxxxxxxxxxx2aba7692
 Azure Active Directory Client Secret: ********************************************
