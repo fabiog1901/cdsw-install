@@ -27,10 +27,11 @@ Get these IDs:
 
 - Go to the Azure Marketplace and search for `Cloudera Director`, then start the wizard.
 - Complete the wizard; example values are below. 
+- At the end of the wizard, you will see a summary just like the below example. Save it for later reference.
 - Finish the wizard and wait until deployment is completed. 
 - Go to the RG, and on both NSGs, add inbound security rule to open ports 80,7180-7189,8888.
 - Go to the RG, and `Convert to managed` each Availability Set.
-- At the end of the wizard, you will see a summary just like the below example. Save it for later reference.
+
 
 ### EXAMPLE PARAMETERS FOR CLOUDERA DIRECTOR WIZARD
 ```
@@ -69,7 +70,7 @@ $ cd cdsw-install
 $ chmod +x scripts/*
 ```
 
-Install MIT Kerberos, Java 8 and JCE Policy Kit, and add Kerberos principals:
+Install MIT Kerberos, Java 8 and JCE Policy Kit, and add the Kerberos principals:
 
 ```
 $ ./scripts/create-log-dir.sh
