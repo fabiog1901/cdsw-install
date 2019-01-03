@@ -101,11 +101,10 @@ unfortunately you will need to do your own homework and go through your fair sha
 There are some reference guides available though, check the Cloudera Director client reference files in ```/usr/lib64/cloudera-director/client/```.
 
 
-Create the `SECRET.properties` file, and add the secret key you used before. Example file below:
+Create the `SECRET.properties` file, and add the secret key you used before.
 
 ```
-$ cat azure/SECRET.properties
-CLIENTSECRET=iaoegrgvvbregeriophdfogeoiqgreh
+$ echo "CLIENTSECRET=aivaxxxxxxxxxxxxxxxxxxxxxx6=" > azure/SECRET.properties
 ```
 
 Create a new ssh key, used by Director and CM to ssh into all cluster nodes
