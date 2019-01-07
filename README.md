@@ -1,4 +1,4 @@
-# CDSW DEPLOYMENT ON AZURE VIA CLOUDERA DIRECTOR
+# CDH+CDSW DEPLOYMENT ON AZURE VIA CLOUDERA DIRECTOR
 
 Following are instructions to deploy a CDH+CDSW cluster on Azure using Cloudera Director's bootstrap script.
 
