@@ -92,7 +92,7 @@ nameserver 10.1.0.4
 search mydnsdomain
 ```
 
-- Kerberos: update the `KDC_HOST` to the Director/MIT KDC host Private IP (get it with `$hostname -I` or check in the Azure Portal)
+- Kerberos: update the `KDC_HOST` to the Director/MIT KDC host Private IP (get it with `hostname -I` or check in the Azure Portal)
 - VM types, images and counts.
 - Software to be installed, versions and repository URLs.
 
