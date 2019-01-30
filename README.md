@@ -105,6 +105,7 @@ Create the `SECRET.properties` file, and add the secret key you used before.
 
 ```
 $ echo "CLIENTSECRET=aivaxxxxxxxxxxxxxxxxxxxxxx6=" > azure/SECRET.properties
+$ chmod 400 azure/SECRET.properties
 ```
 
 Create a new ssh key, used by Director and CM to ssh into all cluster nodes
