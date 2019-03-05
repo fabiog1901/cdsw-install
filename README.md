@@ -60,9 +60,9 @@ Cloudera Director Admin User Password: *************
 
 ### STEPS TO CREATE CDSW DEPLOYMENT
 
-The current Azure Marketplace deployment of Cloudera Director installs version 2.8. This version can install CDH 5 but it cannot install CDH 6. So you must first uninstall Director 2.8, delete the yum repo, download the new repo and install Director 6.1.
+The current Azure Marketplace deployment of Cloudera Director installs version 2.8. This version can install CDH 5 but it cannot install CDH 6. So you must first uninstall Director 2.8, delete the yum repo and config files, download the new repo and install Director 6.1.
 
-SSH into the Director VM using the Username and Password. Install few utils and copy this repo:
+SSH into the Director VM using the Username and Password.
 
 ```
 $ sudo su 
@@ -70,16 +70,15 @@ $ yum erase -y cloudera-director-server cloudera-director-client
 $ rm -rf /etc/yum.repos.d/cloudera-director.repo /etc/cloudera-director-* /var/lib/cloudera-director-server
 $ yum clean all
 $ wget -P /etc/yum.repos.d/ "http://archive.cloudera.com/director6/6.1/redhat7/cloudera-director.repo"
-$ yum install -y cloudera-director-server cloudera-director-client
+$ yum install -y cloudera-director-server cloudera-director-client git vim
 $ systemctl enable cloudera-director-server
 $ systemctl start cloudera-director-server
-$ yum install -y git vim
 $ git clone https://github.com/fabiog1901/cdsw-install.git
 $ cd cdsw-install
 $ chmod +x scripts/*
 ```
 
-Install MIT Kerberos, Java 8 and JCE Policy Kit, and add the Kerberos principals:
+Install MIT Kerberos and add the Kerberos principals:
 
 ```
 $ ./scripts/create-log-dir.sh
@@ -125,7 +124,7 @@ $ rm azure/azurekey.pub
 
 Start the bootstrap script:
 ```
-$ cloudera-director bootstrap-remote azure/azure.conf   --lp.remote.username=director   --lp.remote.password=xxxxxxxx
+$ cloudera-director bootstrap-remote azure/azure.conf   --lp.remote.username=admin   --lp.remote.password=admin
 ```
 
 Once the script has terminated, login into Cloudera Director UI to open Cloudera Manager and navigate to the CDSW service, from which you can open the CDSW Web UI.
