@@ -67,7 +67,7 @@ SSH into the Director VM using the Username and Password. Install few utils and 
 ```
 $ sudo su 
 $ yum erase -y cloudera-director-server cloudera-director-client
-$ rm -rf /etc/yum.repos.d/cloudera-director.repo /etc/cloudera-director-*
+$ rm -rf /etc/yum.repos.d/cloudera-director.repo /etc/cloudera-director-* /var/lib/cloudera-director-server
 $ yum clean all
 $ wget -P /etc/yum.repos.d/ "http://archive.cloudera.com/director6/6.1/redhat7/cloudera-director.repo"
 $ yum install -y cloudera-director-server cloudera-director-client
