@@ -29,7 +29,7 @@ Get these IDs:
 - Complete the wizard; example values are below. 
 - At the end of the wizard, you will see a summary just like the below example. Save it for later reference.
 - Finish the wizard and wait until deployment is completed. 
-- Go to the RG, and on both NSGs, add inbound security rule to open ports 80,7180-7189,8888.
+- Go to the RG, and on both NSGs, add inbound security rule to open ports 80,7180,7189,8888.
 - Go to the RG, and `Convert to managed` each Availability Set.
 
 
@@ -67,7 +67,7 @@ SSH into the Director VM using the Username and Password. Install few utils and 
 ```
 $ sudo su 
 $ yum erase -y cloudera-director-server cloudera-director-client
-$ rm -rf /etc/yum.repos.d/cloudera-director.repo
+$ rm -rf /etc/yum.repos.d/cloudera-director.repo /etc/cloudera-director-*
 $ yum clean all
 $ wget -P /etc/yum.repos.d/ "http://archive.cloudera.com/director6/6.1/redhat7/cloudera-director.repo"
 $ yum install -y cloudera-director-server cloudera-director-client
