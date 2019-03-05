@@ -58,17 +58,20 @@ Cloudera Director Admin Username: director
 Cloudera Director Admin User Password: *************
 ```
 
-### IMPORTANT NOTICE FOR CDH 6.1
-
-The current Azure Marketplace deployment of Cloudera Director installs version 2.8. This version can install CDH 5 but it cannot install CDH 6. If you want to install CDH6, you must first uninstall Director 2.8, delete the yum repo, download the new repo and install Director 6.1. 
-
 ### STEPS TO CREATE CDSW DEPLOYMENT
+
+The current Azure Marketplace deployment of Cloudera Director installs version 2.8. This version can install CDH 5 but it cannot install CDH 6. So you must first uninstall Director 2.8, delete the yum repo, download the new repo and install Director 6.1.
 
 SSH into the Director VM using the Username and Password. Install few utils and copy this repo:
 
 ```
 $ sudo su 
-$ yum install -y git vim wget
+$ yum erase -y cloudera-director-server cloudera-director-client
+$ rm -rf /etc/yum.repos.d/cloudera-director.repo
+$ yum clean all
+$ wget -P /etc/yum.repos.d/ "http://archive.cloudera.com/director6/6.1/redhat7/cloudera-director.repo"
+$ yum install -y cloudera-director-server cloudera-director-client
+$ yum install -y git vim
 $ git clone https://github.com/fabiog1901/cdsw-install.git
 $ cd cdsw-install
 $ chmod +x scripts/*
