@@ -82,7 +82,6 @@ Install MIT Kerberos, Java 8 and JCE Policy Kit, and add the Kerberos principals
 ```
 $ ./scripts/create-log-dir.sh
 $ ./scripts/install-mit-kdc.sh
-$ ./scripts/install-java8.sh
 $ ./scripts/kerberos-addprinc.sh
 ```
 Check the log files on ```/var/log/cdsw-workshop/``` for any errors.
