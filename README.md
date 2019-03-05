@@ -71,6 +71,8 @@ $ rm -rf /etc/yum.repos.d/cloudera-director.repo /etc/cloudera-director-*
 $ yum clean all
 $ wget -P /etc/yum.repos.d/ "http://archive.cloudera.com/director6/6.1/redhat7/cloudera-director.repo"
 $ yum install -y cloudera-director-server cloudera-director-client
+$ systemctl enable cloudera-director-server
+$ systemctl start cloudera-director-server
 $ yum install -y git vim
 $ git clone https://github.com/fabiog1901/cdsw-install.git
 $ cd cdsw-install
