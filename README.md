@@ -66,6 +66,7 @@ SSH into the Director VM using the Username and Password.
 
 ```
 $ sudo su 
+$ systemctl stop cloudera-director-server
 $ yum erase -y cloudera-director-server cloudera-director-client
 $ rm -rf /etc/yum.repos.d/cloudera-director.repo /etc/cloudera-director-* /var/lib/cloudera-director-server
 $ yum clean all
