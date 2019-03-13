@@ -132,6 +132,13 @@ Once the script has terminated, login into Cloudera Director UI to open Cloudera
 
 Alternatively, go to [cdsw.\<CDSW-master-public-IP\>.nip.io](cdsw.<CDSW-master-public-IP>.nip.io) 
 
+**IMPORTANT NOTICE**
+
+Please note that currently with Director you can't specify the OS disk size, so by default Azure provisions a 50GB disk which is too small for the CDSW nodes. You can easely resize the OS disks by following these instruction:
+https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/05/24/step-by-step-how-to-resize-a-linux-vm-os-disk-in-azure-arm/
+
+You need to stop the CDSW service and the VMs before proceeding with the resize instruction, which you can do from the Azure portal directly, rather than from the CLI as instructed in the blog post.
+
 ### KERBEROS AUTH
 
 The scripts create 100 users, from `user00` to `user99`, along with their HDFS folders, all with password `Cloudera1`.
