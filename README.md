@@ -2,6 +2,8 @@
 
 Following are instructions to deploy a CDH+CDSW cluster on Azure using Cloudera Director's bootstrap script.
 
+Services installed as part of CDH are: KAFKA, KUDU, IMPALA, HUE, HIVE, SPARK2, OOZIE, HDFS, YARN, ZOOKEEPER.
+
 For simplicity, the MIT KDC server is installed on the same instance of Cloudera Director. 
 
 Along with deploying the CDH+CDSW cluster, the bootstrap script calls some other scripts 
