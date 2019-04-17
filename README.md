@@ -70,7 +70,7 @@ SSH into the Director VM using the Username and Password.
 $ sudo su 
 $ systemctl stop cloudera-director-server
 $ yum erase -y cloudera-director-server cloudera-director-client
-$ rm -rf /etc/yum.repos.d/cloudera-director.repo /etc/cloudera-director-* /var/lib/cloudera-director-server
+$ rm -rf /etc/yum.repos.d/cloudera-director.repo /etc/cloudera-director-* /var/lib/cloudera-director-server /var/cache/yum
 $ yum clean all
 $ wget -P /etc/yum.repos.d/ "http://archive.cloudera.com/director6/6.2/redhat7/cloudera-director.repo"
 $ yum install -y cloudera-director-server cloudera-director-client git vim
